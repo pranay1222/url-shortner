@@ -8,9 +8,13 @@ const [loading,setloading]=useState(false);
 const handleSubmit= async(e)=>{
   e.preventDefault();
   setloading(true)
-  const backendUrl = process.env.VITE_BACKEND_URL || 'http://localhost:5000';
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000';
+
+  console.log("Sending request to:", backendUrl);
   try{
-    const res= await axios.post(`${backendUrl}/api/url/shorten`, { longUrl: url });
+    const res = await axios.post(`${backendUrl}/api/url/shorten`, {
+    longUrl: url
+});
     setShorturl(res.data.shortUrl);
   }catch(err){
     console.log(err)
