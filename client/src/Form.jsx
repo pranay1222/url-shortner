@@ -12,7 +12,7 @@ const handleSubmit= async(e)=>{
 
   console.log("Sending request to:", backendUrl);
   try{
-    const res = await axios.post(`${backendUrl}/api/url/shorten`, {
+    const res = await axios.post(`https://url-shortner-qbvf.onrender.com/api/url/shorten`, {
     longUrl: url
 });
     setShorturl(res.data.shortUrl);
