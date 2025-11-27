@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const Url = require("../model/url"); // Check if folder is 'models' or 'model'
+const Url = require("../model/url"); 
 const { nanoid } = require("nanoid");
 const validUrl = require('valid-url');
 
 router.post("/shorten", async (req, res) => {
-    // BUG FIX 1: Frontend sends 'longUrl' (CamelCase), not 'longurl'
     let { longUrl } = req.body; 
     
     const base_url = process.env.BASE_URL;
@@ -30,10 +29,10 @@ router.post("/shorten", async (req, res) => {
                     urlCode,
                     longUrl,
                     shortUrl,
-                    date: new Date() // BUG FIX 2: Was 'new Data()' (Typo)
+                    date: new Date()
                 });
 
-                await url.save(); // BUG FIX 3: Was 'Url.save()' (Must be lowercase 'url')
+                await url.save();
                 res.json(url);
             }
         } catch (err) {
