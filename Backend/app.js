@@ -26,5 +26,5 @@ app.use("/api/url",require("./routes/url"))
 app.use("/",require("./routes/index"))
 
 app.listen(5000,()=>{
-    console.log("Server is running on port 3000");
+    console.log("Server is running on port 5000");
 })
