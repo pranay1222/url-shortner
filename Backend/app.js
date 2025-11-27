@@ -1,6 +1,3 @@
-// if(process.env.NODE_ENV!=="production"){
-//     require('dotenv').config()
-// }
 require('dotenv').config();
 const express=require("express");//importing express module
 const app=express();//creating express application
