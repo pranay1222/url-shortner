@@ -1,6 +1,3 @@
-// after clicking on the short link The browser sends a GET request directly to your Node server.
-// this route will activate 
-
 const express =require("express")
 const router=express.Router()
 const Url= require("../model/url")
